@@ -4,17 +4,75 @@ pageClass: routes
 
 # Programming
 
+## A List Apart
+
+### Articles
+
+<RouteEn author="Rjnishant530" example="/alistapart" path="/alistapart" radar="1"/>
+
+### Topics
+
+<RouteEn author="Rjnishant530" example="/alistapart/application-development" path="/alistapart/:topic" :paramsDesc="['Any Topic or from the table below. Defaults to All Articles']" radar="1"/>
+
+You have the option to utilize the main heading or use individual categories as topics for the path.
+
+::: details Topics
+
+| **Code**                | _code_                  |
+|-------------------------|-------------------------|
+| **Application Development** | _application-development_ |
+| **Browsers**             | _browsers_              |
+| **CSS**                  | _css_                   |
+| **HTML**                 | _html_                  |
+| **JavaScript**           | _javascript_            |
+| **The Server Side**      | _the-server-side_       |
+
+| **Content**             | _content_               |
+|-------------------------|-------------------------|
+| **Community**           | _community_             |
+| **Content Strategy**    | _content-strategy_      |
+| **Writing**             | _writing_               |
+
+| **Design**              | _design_                |
+|-------------------------|-------------------------|
+| **Brand Identity**      | _brand-identity_        |
+| **Graphic Design**      | _graphic-design_        |
+| **Layout & Grids**      | _layout-grids_          |
+| **Mobile/Multidevice**  | _mobile-multidevice_    |
+| **Responsive Design**   | _responsive-design_     |
+| **Typography & Web Fonts** | _typography-web-fonts_ |
+
+| **Industry & Business** | _industry-business_     |
+|-------------------------|-------------------------|
+| **Business**            | _business_              |
+| **Career**              | _career_                |
+| **Industry**            | _industry_              |
+| **State of the Web**    | _state-of-the-web_      |
+
+| **Process**             | _process_               |
+|-------------------------|-------------------------|
+| **Creativity**          | _creativity_            |
+| **Project Management**  | _project-management_    |
+| **Web Strategy**        | _web-strategy_          |
+| **Workflow & Tools**    | _workflow-tools_        |
+
+| **User Experience**     | _user-experience_       |
+|-------------------------|-------------------------|
+| **Accessibility**       | _accessibility_         |
+| **Information Architecture** | _information-architecture_ |
+| **Interaction Design**  | _interaction-design_    |
+| **Usability**           | _usability_             |
+| **User Research**       | _user-research_         |
+
+:::
+
+</RouteEn>
+
 ## ACM
 
 ### A.M.Turing Award Winners
 
 <RouteEn author="nczitzk" example="/acm/amturingaward" path="/acm/amturingaward"/>
-
-## ACM-ECNU
-
-### ECNU ACM Online-Judge contests list
-
-<RouteEn author="a180285" example="/acm-ecnu/contest/public" path="/acm-ecnu/contest/:category?" radar="1" rssbud="1" :paramsDesc="['category is optional, default is all, use `public` for public only contests']" />
 
 ## AtCoder
 
@@ -66,17 +124,43 @@ Category
 
 <RouteEn author="elxy" example="/bbcnewslabs/news" path="/bbcnewslabs/news"/>
 
+## Bitbucket
+
+### Commits
+
+<RouteEn author="AuroraDysis" example="/bitbucket/commits/blaze-lib/blaze" path="/bitbucket/commits/:workspace/:repo_slug" :paramsDesc="['Workspace', 'Repository']" radar="1" rssbud="1" />
+
+### Tags
+
+<RouteEn author="AuroraDysis" example="/bitbucket/tags/blaze-lib/blaze" path="/bitbucket/tags/:workspace/:repo_slug" :paramsDesc="['Workspace', 'Repository']" radar="1" rssbud="1" />
+
 ## Bitmovin
 
 ### Blog
 
 <RouteEn author="elxy" example="/bitmovin/blog" path="/bitmovin/blog"/>
 
+## CNCF
+
+### Category
+
+<RouteEn author="Fatpandac" example="/cncf" path="/cncf/:cate?" radar="1" rssbud="1" :paramsDesc="['blog by default']">
+
+| Blog | News | Announcements | Reports |
+|------|------|---------------|---------|
+| blog | news | announcements | reports |
+
+</RouteEn>
+
 ## Codeforces
 
 ### Latest contests
 
 <RouteEn author="Fatpandac" example="/codeforces/contests" path="/codeforces/contests"/>
+
+### Recent actions
+
+<RouteEn author="ftiasch" example="/codeforces/recent-actions" path="/codeforces/recent-actions/:minrating?" :paramsDesc="['The minimum blog/comment rating required. Default: 1']"/>
 
 ## cve.mitre.org
 
@@ -90,16 +174,23 @@ Category
 
 <RouteEn author="nczitzk" example="/distill" path="/distill"/>
 
+## gihyo.jp
+
+### Series
+
+<Route author="masakichi" example="/gihyo/list/group/Ubuntu-Weekly-Recipe" path="/gihyo/list/group/:id" :paramsDesc="['Series']"/>
+
 ## GitHub
 
 ::: tip
 
 GitHub provides some official RSS feeds:
 
--   Repo releases: https://github.com/:owner/:repo/releases.atom
--   Repo commits: https://github.com/:owner/:repo/commits.atom
--   User activities: https://github.com/:user.atom
--   Private feed: https://github.com/:user.private.atom?token=:secret (You can find **Subscribe to your news feed** in [dashboard](https://github.com) page after login)
+-   Repo releases: `https://github.com/:owner/:repo/releases.atom`
+-   Repo commits: `https://github.com/:owner/:repo/commits.atom`
+-   User activities: `https://github.com/:user.atom`
+-   Private feed: `https://github.com/:user.private.atom?token=:secret` (You can find **Subscribe to your news feed** in [dashboard](https://github.com) page after login)
+-   Wiki history: `https://github.com/:owner/:repo/wiki.atom`
 
 :::
 
@@ -109,29 +200,29 @@ GitHub provides some official RSS feeds:
 
 ### Trending
 
-<RouteEn author="DIYgod" path="/github/trending/:since/:language/:spoken_language?" example="/github/trending/daily/javascript/en" :paramsDesc="['time frame, available in [Trending page](https://github.com/trending/javascript?since=monthly) \'s URL, possible values are: `daily`, `weekly` or `monthly`', 'the feed language, available in [Trending page](https://github.com/trending/javascript?since=monthly) \'s URL, don\'t filter option is `any`', 'natural language, available in [Trending page](https://github.com/trending/javascript?since=monthly) \'s URL']" radar="1" rssbud="1"/>
+<RouteEn author="DIYgod" path="/github/trending/:since/:language/:spoken_language?" example="/github/trending/daily/javascript/en" :paramsDesc="['time frame, available in [Trending page](https://github.com/trending/javascript?since=monthly) \'s URL, possible values are: `daily`, `weekly` or `monthly`', 'the feed language, available in [Trending page](https://github.com/trending/javascript?since=monthly) \'s URL, don\'t filter option is `any`', 'natural language, available in [Trending page](https://github.com/trending/javascript?since=monthly) \'s URL']" radar="1" rssbud="1" selfhost="1"/>
 
 ### Topics
 
 <RouteEn author="queensferryme" example="/github/topics/framework" path="/github/topics/:name/:qs?" :paramsDesc="['Topic name, which can be found in the URL of the corresponding [Topics Page](https://github.com/topics/framework)', 'Query string, like `l=php&o=desc&s=stars`. Details listed as follows:']" radar="1" rssbud="1">
 
-| Parameter | Description | Values |
-| ---- | ---- | ---- |
-| `l` | Language | For instance `php`, which can be found in the URL of the corresponding [Topics page](https://github.com/topics/framework?l=php) |
-| `o` | Sorting Order | `asc`, `desc` |
-| `s` | Sorting Criteria | `stars`, `forks`, `updated` |
+| Parameter | Description      | Values                                                                                                                          |
+| --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `l`       | Language         | For instance `php`, which can be found in the URL of the corresponding [Topics page](https://github.com/topics/framework?l=php) |
+| `o`       | Sorting Order    | `asc`, `desc`                                                                                                                   |
+| `s`       | Sorting Criteria | `stars`, `forks`, `updated`                                                                                                     |
 
 For instance, the `/github/topics/framework/l=php&o=desc&s=stars` route will generate the RSS feed corresponding to this [page](https://github.com/topics/framework?l=php&o=desc&s=stars).
 
-</Route>
+</RouteEn>
 
 ### Repo Issues
 
-<RouteEn author="HenryQW AndreyMZ" path="/github/issue/:user/:repo/:state?/:labels?" example="/github/issue/DIYgod/RSSHub/all/bug" :paramsDesc="['GitHub username', 'GitHub repo name', 'the state of the issues. Can be either `open`, `closed`, or `all`. Default: `open`.', 'a list of comma separated label names']" radar="1" rssbud="1"/>
+<RouteEn author="HenryQW AndreyMZ" path="/github/issue/:user/:repo/:state?/:labels?" example="/github/issue/DIYgod/RSSHub/all/RSS%20proposal" :paramsDesc="['GitHub username', 'GitHub repo name', 'the state of the issues. Can be either `open`, `closed`, or `all`. Default: `open`.', 'a list of comma separated label names']" radar="1" rssbud="1"/>
 
 ### Repo Pull Requests
 
-<RouteEn author="hashman" example="/github/pull/DIYgod/RSSHub" path="/github/pull/:user/:repo" :paramsDesc="['User name', 'Repo name']" radar="1" rssbud="1"/>
+<RouteEn author="hashman TonyRL" example="/github/pull/DIYgod/RSSHub" path="/github/pull/:user/:repo/:state?/:labels?" :paramsDesc="['User name', 'Repo name', 'the state of pull requests. Can be either `open`, `closed`, or `all`. Default: `open`.', 'a list of comma separated label names']" radar="1" rssbud="1"/>
 
 ### User Followers
 
@@ -156,15 +247,16 @@ For instance, the `/github/topics/framework/l=php&o=desc&s=stars` route will gen
 > -   If there are special characters such as `/` in the **branch name**, they need to be encoded with urlencode, usually `/` needs to be replaced with `%2f`
 > -   If there are special characters in the **file path**, you need to use urlencode to encode them, but the file path can be recognized normally `/` characters
 > -   If the **file path** ends with `.rss`, `.atom`, `.json`, you need to replace the `.` in the suffix with `%2e`
->     > Reeder will make an error when subscribing to `% 2erss` or similar suffixes. At this time, add`.rss` after the route to subscribe
->     >
->     > Such as: replace `https://rsshub.app/github/file/DIYgod/RSSHub/master/lib/router%2ejs` to `https://rsshub.app/github/file/DIYgod/RSSHub/master/lib/router%2ejs.rss`
+>
+> > Reeder will make an error when subscribing to `% 2erss` or similar suffixes. At this time, add`.rss` after the route to subscribe
+> >
+> > Such as: replace `https://rsshub.app/github/file/DIYgod/RSSHub/master/lib/router%2ejs` to `https://rsshub.app/github/file/DIYgod/RSSHub/master/lib/router%2ejs.rss`
 
 </RouteEn>
 
 ### Search Result
 
-<RouteEn author="LogicJake" example="/github/search/RSSHub/bestmatch/desc" path="/github/search/:query/:sort?/:order?" :paramsDesc="['search keyword', 'Sort options (default to bestmatch)','Sort order, desc and asc (desc descending by default)']"/>
+<RouteEn author="LogicJake" example="/github/search/RSSHub/bestmatch/desc" path="/github/search/:query/:sort?/:order?" :paramsDesc="['search keyword', 'Sort options (default to bestmatch)','Sort order, desc and asc (desc descending by default)']">
 
 | Sort options     | sort      |
 | ---------------- | --------- |
@@ -172,6 +264,8 @@ For instance, the `/github/topics/framework/l=php&o=desc&s=stars` route will gen
 | Most stars       | stars     |
 | Most forks       | forks     |
 | Recently updated | updated   |
+
+</RouteEn>
 
 ### User Starred Repositories
 
@@ -181,9 +275,21 @@ For instance, the `/github/topics/framework/l=php&o=desc&s=stars` route will gen
 
 <RouteEn author="zoenglinghou" example="/github/contributors/DIYgod/RSSHub" path="/github/contributors/:user/:repo/:order?/:anon?" :paramsDesc="['User name','Repo name','Sort order by commit numbers, desc and asc (descending by default)','Show anonymous users. Defaults to no, use any values for yes.']" radar="1" rssbud="1"/>
 
-### Issues / Pull Requests comments
+### Issue / Pull Request comments
 
-<RouteEn author="TonyRL" example="/github/comments/DIYgod/RSSHub/issues/8116" path="/github/comments/:user/:repo/:type/:number" :paramsDesc="['User / Org name', 'Repo name', 'Type, `issues` or `pull`', 'Number']"/>
+<RouteEn author="TonyRL FliegendeWurst" example="/github/comments/DIYgod/RSSHub/8116" path="/github/comments/:user/:repo/:number?" :paramsDesc="['User / Org name', 'Repo name', 'Issue or pull number (if omitted: all)']" radar="1" rssbud="1"/>
+
+### Wiki History
+
+<RouteEn author="TonyRL" example="/github/wiki/flutter/flutter/Roadmap" path="/github/wiki/:user/:repo/:page?" :paramsDesc="['User / Org name', 'Repo name', 'Page slug, can be found in URL, empty means Home']" radar="1" rssbud="1"/>
+
+### Notifications
+
+<RouteEn author="zhzy0077" example="/github/notifications" path="/github/notifications" radar="1" rssbud="1" selfhost="1"/>
+
+### Gist Commits
+
+<RouteEn author="TonyRL" example="/github/gist/d2c152bb7179d07015f336b1a0582679" path="/github/gist/:gistId" :paramsDesc="['Gist ID']" radar="1" rssbud="1"/>
 
 ## GitLab
 
@@ -205,17 +311,29 @@ For instance, the `/github/topics/framework/l=php&o=desc&s=stars` route will gen
 
 <RouteEn author="zoenglinghou" example="/gitlab/tag/rluna-open-source%2Ffile-management%2Fowncloud/core/gitlab.com" path="/gitlab/tag/:namespace/:project/:host?" :paramsDesc="['owner or namespace. `/` needs to be replaced with `%2F`', 'project name', 'Gitlab instance hostname, default to gitlab.com']" />
 
+## Gitpod
+
+### Blog
+
+<RouteEn author="TonyRL" example="/gitpod/blog" path="/gitpod/blog" />
+
+### Changelog
+
+<RouteEn author="TonyRL" example="/gitpod/changelog" path="/gitpod/changelog" />
+
 ## Hacker News
 
 ### Section
 
-<RouteEn author="cf020031308 nczitzk" example="/hackernews" path="/hackernews/:section?/:type?/:user?" :paramsDesc="['Section, see below, `index` by default', 'Link, see below, `sources` by default', 'User, only valid for section `threads` and `submitted`']">
+<RouteEn author="cf020031308 nczitzk" example="/hackernews" path="/hackernews/:section?/:type?/:user?" :paramsDesc="['Section, see below, `index` by default', 'Link, see below, `sources` by default', 'User, only valid for section `threads` and `submitted`. When `over` section is used, `User` means the threshold points for post']">
 
 Section
 
-| homepage                              | new                                           | past                                        | comments                                                | ask                                     | show                                      | jobs                                      | best                                      | threads                                                 | submitted                                                   |
-| ------------------------------------- | --------------------------------------------- | ------------------------------------------- | ------------------------------------------------------- | --------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------- |
-| [index](https://news.ycombinator.com) | [newest](https://news.ycombinator.com/newest) | [front](https://news.ycombinator.com/front) | [newcomments](https://news.ycombinator.com/newcomments) | [ask](https://news.ycombinator.com/ask) | [show](https://news.ycombinator.com/show) | [jobs](https://news.ycombinator.com/jobs) | [best](https://news.ycombinator.com/best) | [threads](https://news.ycombinator.com/threads?id=dang) | [submitted](https://news.ycombinator.com/submitted?id=dang) |
+| homepage                              | new                                           | past                                        | comments                                                | ask                                     | show                                      | jobs                                      | best                                      | threads                                                 | submitted                                                   |over                            |
+| ------------------------------------- | --------------------------------------------- | ------------------------------------------- | ------------------------------------------------------- | --------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------- |----------------------------------------------------------- |
+| [index](https://news.ycombinator.com) | [newest](https://news.ycombinator.com/newest) | [front](https://news.ycombinator.com/front) | [newcomments](https://news.ycombinator.com/newcomments) | [ask](https://news.ycombinator.com/ask) | [show](https://news.ycombinator.com/show) | [jobs](https://news.ycombinator.com/jobs) | [best](https://news.ycombinator.com/best) | [threads](https://news.ycombinator.com/threads?id=dang) | [submitted](https://news.ycombinator.com/submitted?id=dang) | [over](https://news.ycombinator.com/over?points=100) |
+
+> Section `Over` only shows the submissions over a fixed threshold from last few days
 
 Items link to
 
@@ -233,12 +351,29 @@ Subscribe to the updates (threads and submission) from a paritcular Hacker News 
 
 <RouteEn author="cf020031308 nczitzk xie-dongping" example="/hackernews/threads/comments_list/dang" path="/hackernews/:section?/:type?/:user?" :paramsDesc="['Section, see above, `index` by default', 'Link, see above, `sources` by default', 'User, only valid for section `threads` and `submitted`']" />
 
+## HackMD
+
+### Profile
+
+<RouteEn author="Yukaii kaiix" example="/hackmd/profile/hackmd" path="/hackmd/profile/:path" :paramsDesc="['userpath or teampath']" radar="1"/>
+
 ## Hex-Rays
 
 ### Hex-Rays News
 
-<RouteEn author="hellodword" example="/hex-rays/news" path="/hex-rays/news">
-</RouteEn>
+<RouteEn author="hellodword" example="/hex-rays/news" path="/hex-rays/news" />
+
+## Huggingface
+
+### Daily Papers
+
+<RouteEn author="zeyugao" example="/huggingface/daily-papers" path="/huggingface/daily-papers" />
+
+## Issue Hunt
+
+### Project Funded
+
+<RouteEn author="running-grass" radar="1" example="/issuehunt/funded/DIYgod/RSSHub" path="/issuehunt/funded/:username/:repo" :paramsDesc="['Github user/org','Repository name']" />
 
 ## Kaggle
 
@@ -262,6 +397,13 @@ Subscribe to the updates (threads and submission) from a paritcular Hacker News 
 
 </RouteEn>
 
+## Layer3
+
+### Quest
+
+<RouteEn author="nczitzk" example="/layer3/quests" path="/layer3/quests" radar="1"/>
+
+
 ## LeetCode
 
 ### Articles
@@ -271,6 +413,14 @@ Subscribe to the updates (threads and submission) from a paritcular Hacker News 
 ### Submission
 
 <RouteEn author="NathanDai" example="/leetcode/submission/us/nathandai" path="/leetcode/submission/:country/:user" :paramsDesc="['country, Chines(cn) and US(us)', 'Username, available at the URL of the LeetCode user homepage']"/>
+
+### Daily Question
+
+<RouteEn author="NavePnow" example="/leetcode/dailyquestion/en" path="/leetcode/dailyquestion/:lang" :paramsDesc="['site, Chines(cn) and Engligh(en)']"/>
+
+### Daily Question Solution
+
+<RouteEn author="woaidouya123" example="/leetcode/dailyquestion/solution/en" path="/leetcode/dailyquestion/solution/:lang" :paramsDesc="['site, Chines(cn) and Engligh(en)']"/>
 
 ## Linux Patchwork
 
@@ -299,6 +449,17 @@ Subscribe to the updates (threads and submission) from a paritcular Hacker News 
 | Slackware        | `Slackware`        |
 | SUSE             | `SUSE`             |
 | Ubuntu           | `Ubuntu`           |
+
+</RouteEn>
+
+## MySQL
+
+### Release Notes
+
+<RouteEn author="nczitzk" example="/mysql/release/8.0" path="/mysql/release/:version?" :paramsDesc="['Version, see below, 8.0 by default']">
+
+| 8.0 | 5.7 | 5.6 |
+| --- | --- | --- |
 
 </RouteEn>
 
@@ -345,14 +506,90 @@ Subscribe to the updates (threads and submission) from a paritcular Hacker News 
 <RouteEn author="fengkx" example="/scala/blog/posts" path="/scala/blog/:part?" :paramsDesc="['part parmater can be found in the url of blog']" >
 </RouteEn>
 
+## Smashing Magazine
+
+### Articles
+
+<RouteEn author="Rjnishant530" example="/smashingmagazine" path="/smashingmagazine" radar="1"/>
+
+### Category
+
+<RouteEn author="Rjnishant530" example="/smashingmagazine/react" path="/smashingmagazine/:category?" :paramsDesc="['Find in URL or Table below']" radar="1">
+
+::: details Category
+
+| **Category**         |                       |
+|----------------------|-----------------------|
+| Accessibility        | accessibility         |
+| Best practices       | best-practices       |
+| Business             | business              |
+| Career               | career                |
+| Checklists           | checklists            |
+| CSS                  | css                   |
+| Data Visualization   | data-visualization   |
+| Design               | design                |
+| Design Patterns      | design-patterns      |
+| Design Systems       | design-systems       |
+| E-Commerce           | e-commerce           |
+| Figma                | figma                 |
+| Freebies             | freebies              |
+| HTML                 | html                  |
+| Illustrator          | illustrator           |
+| Inspiration          | inspiration           |
+| JavaScript           | javascript           |
+| Mobile               | mobile                |
+| Performance          | performance           |
+| Privacy              | privacy               |
+| React                | react                 |
+| Responsive Design    | responsive-design    |
+| Round-Ups            | round-ups            |
+| SEO                  | seo                   |
+| Typography           | typography            |
+| Tools                | tools                 |
+| UI                   | ui                    |
+| Usability            | usability             |
+| UX                   | ux                    |
+| Vue                  | vue                   |
+| Wallpapers           | wallpapers            |
+| Web Design           | web-design            |
+| Workflow             | workflow              |
+
+:::
+
+</RouteEn>
+
+## ui.dev
+
+### BYTES - Your weekly dose of JS
+
+Staying informed on the JavaScript ecosystem has never been so entertaining. Delivered every Monday and Thursday, for free. https://bytes.dev/
+
+<RouteEn author="meixger" example="/bytes" path="/bytes"/>
+
+### React Newsletter
+
+Stay up to date on the latest React news, tutorials, resources, and more. Delivered every Tuesday, for free. https://reactnewsletter.com/
+
+<RouteEn author="meixger" example="/reactnewsletter" path="/reactnewsletter"/>
+
 ## Visual Studio Code Marketplace
 
 ### Visual Studio Code Plugins Marketplace
 
-<RouteEn author="SeanChao" example="/vscode/marketplace" path="/vscode/marketplace/:category?" :paramsDesc="['Category']">
+<RouteEn author="SeanChao" example="/vscode/marketplace" path="/vscode/marketplace/:category?" :paramsDesc="['Category']" >
 
 | Featured | Trending Weekly | Trending Monthly | Trending Daily | Most Popular | Recently Added |
 | -------- | --------------- | ---------------- | -------------- | ------------ | -------------- |
 | featured | trending        | trending_m       | trending_d     | popular      | new            |
 
 </RouteEn>
+
+## zooTeam
+
+### blog
+
+<RouteEn author="Pulset" example="/zooTeam/blog" path="/zooTeam/blog" radar="1" rssbud="1"/>
+
+### weekly
+
+<RouteEn author="Pulset" example="/zooTeam/weekly" path="/zooTeam/weekly" radar="1" rssbud="1"/>

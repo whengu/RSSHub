@@ -49,9 +49,9 @@ IATA 国际航空运输协会机场代码，参见[维基百科 国际航空运�
 
 <Route author="sinchang" example="/imuseum/shanghai/all" path="/imuseum/:city/:type?" :paramsDesc="['如 shanghai, beijing', '不填则默认为 `all`']">
 
-| 全部  | 最新     | 热门  | 即将结束     | 即将开始   | 已结束      |
-| --- | ------ | --- | -------- | ------ | -------- |
-| all | latest | hot | end_soon | coming | outdated |
+| 全部 | 最新   | 热门 | 即将结束 | 即将开始 | 已结束   |
+| ---- | ------ | ---- | -------- | -------- | -------- |
+| all  | latest | hot  | end_soon | coming   | outdated |
 
 </Route>
 
@@ -66,33 +66,46 @@ IATA 国际航空运输协会机场代码，参见[维基百科 国际航空运�
 <Route author="nicolaszf" example="/flyert/creditcard/zhongxin" path="/flyert/creditcard/:bank" :paramsDesc="['信用卡板块各银行的拼音简称']">
 
 | 信用卡模块 | bank          |
-| ----- | ------------- |
+| ---------- | ------------- |
 | 国内信用卡 | creditcard    |
-| 浦发银行  | pufa          |
-| 招商银行  | zhaoshang     |
-| 中信银行  | zhongxin      |
-| 交通银行  | jiaotong      |
-| 中国银行  | zhonghang     |
-| 工商银行  | gongshang     |
-| 广发银行  | guangfa       |
-| 农业银行  | nongye        |
-| 建设银行  | jianshe       |
-| 汇丰银行  | huifeng       |
-| 民生银行  | mingsheng     |
-| 兴业银行  | xingye        |
-| 花旗银行  | huaqi         |
-| 无卡支付  | wuka          |
-| 投资理财  | 137           |
+| 浦发银行   | pufa          |
+| 招商银行   | zhaoshang     |
+| 中信银行   | zhongxin      |
+| 交通银行   | jiaotong      |
+| 中国银行   | zhonghang     |
+| 工商银行   | gongshang     |
+| 广发银行   | guangfa       |
+| 农业银行   | nongye        |
+| 建设银行   | jianshe       |
+| 汇丰银行   | huifeng       |
+| 民生银行   | mingsheng     |
+| 兴业银行   | xingye        |
+| 花旗银行   | huaqi         |
+| 上海银行   | shanghai      |
+| 无卡支付   | wuka          |
+| 投资理财   | 137           |
 | 网站权益汇 | 145           |
 | 境外信用卡 | intcreditcard |
 
 </Route>
 
+## 福州地铁
+
+### 通知公告
+
+<Route author="HankChow" example="/fzmtr/announcements" path="/fzmtr/announcements"/>
+
+## 广州地铁
+
+### 新闻
+
+<Route author="HankChow" example="/guangzhoumetro/news" path="/guangzhoumetro/news"/>
+
 ## 国家地理
 
 ### 分类
 
-<Route author="fengkx" example="/natgeo/environment/article" path="/natgeo/:cat/:type?" :paramsDesc="['分类', '类型, 例如`https://www.natgeomedia.com/environment/photo/`对应 cat, type 分别为 environment, photo']"/>
+<Route author="fengkx" example="/natgeo/environment/article" path="/natgeo/:cat/:type?" :paramsDesc="['分类', '类型, 例如`https://www.natgeomedia.com/environment/photo/`对应 `cat`, `type` 分别为 `environment`, `photo`']"/>
 
 ## 活动行
 
@@ -114,15 +127,53 @@ IATA 国际航空运输协会机场代码，参见[维基百科 国际航空运�
 
 </Route>
 
+## 纽约布鲁克林博物馆
+
+<Route author="chazeon"
+example="/brooklynmuseum/exhibitions"
+path="/brooklynmuseum/exhibitions/:state?"
+:paramsDesc="['展览进行的状态：`current` 对应展览当前正在进行，`past` 对应过去的展览，`upcoming` 对应即将举办的展览，默认为 `current`']"
+/>
+
+## 纽约大都会美术馆
+
+<Route author="chazeon"
+example="/metmuseum/exhibitions"
+path="/metmusem/exhibitions/:state?"
+:paramsDesc="['展览进行的状态：`current` 对应展览当前正在进行，`past` 对应过去的展览，`upcoming` 对应即将举办的展览，默认为 `current`']" anticrawler="1"
+/>
+
+## 纽约古根海姆基金会
+
+<Route author="chazeon" example="/guggenheim/exhibitions" path="/guggenheim/exhibitions" />
+
+## 纽约新美术馆
+
+<Route author="chazeon" example="/newmuseum/exhibitions" path="/newmuseum/exhibitions" />
+
+## 纽约犹太人博物馆
+
+<Route author="chazeon" example="/jewishmuseum/exhibitions" path="/jewishmuseum/exhibitions" />
+
+## 芝加哥当代艺术博物馆
+
+<Route author="chazeon" example="/mcachicago/exhibitions" path="/mcachicago/exhibitions" />
+
+## 中国国际航空公司
+
+### 服务公告
+
+<Route author="LandonLi" example="/airchina/announcement" path="/airchina/announcement" radar="1" />
+
 ## 中国美术馆
 
 ### 美术馆新闻
 
 <Route author="HenryQW" example="/namoc/announcement" path="/namoc/:type" :paramsDesc="['新闻类型， 可选如下']">
 
-| 通知公告         | 新闻   | 媒体联报  | 展览预告       | 焦点专题     |
-| ------------ | ---- | ----- | ---------- | -------- |
-| announcement | news | media | exhibition | specials |
+| 通知公告     | 新闻 | 媒体联报 | 展览预告   | 焦点专题 |
+| ------------ | ---- | -------- | ---------- | -------- |
+| announcement | news | media    | exhibition | specials |
 
 </Route>
 
@@ -130,8 +181,8 @@ IATA 国际航空运输协会机场代码，参见[维基百科 国际航空运�
 
 <Route author="laampui" example="/nippon/Politics" path="/nippon/:category?" :paramsDesc="['默认政治，可选如下']">
 
-| 政治       | 经济      | 社会      | 展览预告    | 焦点专题               | 深度报道     | 话题           | 日本信息库      | 日本一蹩          | 人物访谈   | 编辑部通告         |
-| -------- | ------- | ------- | ------- | ------------------ | -------- | ------------ | ---------- | ------------- | ------ | ------------- |
-| Politics | Economy | Society | Culture | Science,Technology | In-depth | japan-topics | japan-data | japan-glances | People | Announcements |
+| 政治     | 经济    | 社会    | 展览预告 | 焦点专题           | 深度报道 | 话题         | 日本信息库 | 日本一蹩      | 人物访谈 | 编辑部通告    |
+| -------- | ------- | ------- | -------- | ------------------ | -------- | ------------ | ---------- | ------------- | -------- | ------------- |
+| Politics | Economy | Society | Culture  | Science,Technology | In-depth | japan-topics | japan-data | japan-glances | People   | Announcements |
 
 </Route>
